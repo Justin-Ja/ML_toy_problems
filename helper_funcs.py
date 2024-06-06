@@ -6,7 +6,7 @@ from pathlib import Path
 # Creates a matplotlib plot of the input moons and save the image
 def createInputImage(x_values, y_values, name="input.png"):
     plt.figure(figsize=(10, 7))
-    plt.scatter(x_values[:, 0], x_values[:, 1], c=y_values, cmap=plt.cm.jet)
+    plt.scatter(x_values[:, 0], x_values[:, 1], c=y_values, cmap=plt.cm.inferno)
     plt.savefig(name)
 
 # Create a matplotlib plot of the model's results of the training and test data points
@@ -47,8 +47,8 @@ def plotDecisionBoundary(model, x_values, y_values):
 
     # Reshape preds and plot
     y_pred = y_pred.reshape(xx.shape).detach().numpy()
-    plt.contourf(xx, yy, y_pred, cmap=plt.cm.jet, alpha=0.7)
-    plt.scatter(x_values[:, 0], x_values[:, 1], c=y_values, s=40, cmap=plt.cm.jet)
+    plt.contourf(xx, yy, y_pred, cmap=plt.cm.inferno, alpha=0.7)
+    plt.scatter(x_values[:, 0], x_values[:, 1], c=y_values, s=40, cmap=plt.cm.inferno)
     plt.xlim(xx.min(), xx.max())
     plt.ylim(yy.min(), yy.max())
 
