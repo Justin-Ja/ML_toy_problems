@@ -8,7 +8,7 @@ import helper_funcs as helper
 
 # Hyperparameters, adjust these to effect generated input and the effeciency of the model
 N_SAMPLES: Final[int] = 1000
-NOISE: Final[int] = 0.075
+NOISE: Final[int] = 0.08
 RAND_SEED: Final[int] = 42
 DEFAULT_HIDDEN_UNITS: Final[int] = 5
 EPOCHS: Final = 500
