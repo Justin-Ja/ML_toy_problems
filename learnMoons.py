@@ -21,11 +21,8 @@ groups = torch.from_numpy(groups).type(torch.float)
 
 points_train, points_test, groups_train, groups_test = train_test_split(points, groups, test_size=0.2)
 
-#Device agnostic code
-if torch.cuda.is_available():
-    device = "cuda"
-else:
-    device = "cpu"
+# Allows for device agnostic code
+device = helper.determineDevice()
 
 helper.createInputImage(points, groups, name="moon_input.png")
 

@@ -58,5 +58,12 @@ def accuracy_fn(input_values, predicted_values):
     correctGuesses = torch.eq(input_values, predicted_values).sum().item()
     return ((correctGuesses / len(predicted_values)) * 100)
 
+# Determines if pytorch can access GPU for 
+def determineDevice():
+    if torch.cuda.is_available():
+        return "cuda"
+    else:
+        return "cpu"
+    
 if __name__ == "__main__":
     print("Run one of the learn python files to see the ML models in action")

@@ -22,3 +22,5 @@ for j in range(K):
   y[ix] = j
 
 helper.createInputImage(X, y, name="spiral_input.png")
+
+device = helper.determineDevice()
