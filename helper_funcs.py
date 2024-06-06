@@ -4,13 +4,13 @@ import numpy as np
 from pathlib import Path
 
 # Creates a matplotlib plot of the input moons and save the image
-def createMoonInputImage(x_values, y_values, name="moon_input.png"):
+def createInputImage(x_values, y_values, name="input.png"):
     plt.figure(figsize=(10, 7))
     plt.scatter(x_values[:, 0], x_values[:, 1], c=y_values, cmap=plt.cm.jet)
     plt.savefig(name)
 
 # Create a matplotlib plot of the model's results of the training and test data points
-def createMoonOutputImage(model, x_train, y_train, x_test, y_test, name="moon_output.png"):
+def createOutputImage(model, x_train, y_train, x_test, y_test, name="output.png"):
     plt.figure(figsize=(12, 6))
     plt.subplot(1, 2, 1)
     plt.title("Train")
@@ -58,3 +58,5 @@ def accuracy_fn(input_values, predicted_values):
     correctGuesses = torch.eq(input_values, predicted_values).sum().item()
     return ((correctGuesses / len(predicted_values)) * 100)
 
+if __name__ == "__main__":
+    print("Run one of the learn python files to see the ML models in action")
