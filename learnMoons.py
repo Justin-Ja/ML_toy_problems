@@ -28,7 +28,7 @@ helper.createInputImage(points, groups, name="moon_input.png")
 
 # Consider possibly move this to its own file, and jsut have a new file for each class of model?
 class MoonModel(nn.Module):
-    def __init__(self, input_features, output_features, hidden_units=5):
+    def __init__(self, input_features, output_features, hidden_units=DEFAULT_HIDDEN_UNITS):
         super().__init__()
 
         # Model has three hidden layers, with default of 5 neurons (hidden_units)
