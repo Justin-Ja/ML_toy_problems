@@ -4,8 +4,7 @@ import numpy as np
 from typing import Final
 from sklearn.datasets import make_moons
 from sklearn.model_selection import train_test_split
-import github_upload_work.lesson2_work.helperFuncs as helper
-import matplotlib.pyplot as plt
+import helperFuncs as helper
 
 RAND_SEED: Final[int] = 50
 LR: Final[float] = 0.01  #If using 0.1, turn epochs down to ~10,000 otherwise accuracy starts decreasing / loss increases

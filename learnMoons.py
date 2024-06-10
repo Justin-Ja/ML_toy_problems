@@ -3,7 +3,7 @@ from torch import nn
 from typing import Final
 from sklearn.datasets import make_moons
 from sklearn.model_selection import train_test_split
-import github_upload_work.lesson2_work.helperFuncs as helper
+import helperFuncs as helper
 
 # Hyperparameters, adjust these to effect the generated input and the effeciency of the model
 N_SAMPLES: Final[int] = 1000
