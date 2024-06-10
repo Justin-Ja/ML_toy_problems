@@ -2,7 +2,6 @@ import torch
 from torch import nn
 import numpy as np
 from typing import Final
-from sklearn.datasets import make_moons
 from sklearn.model_selection import train_test_split
 import helperFuncs as helper
 
@@ -34,7 +33,7 @@ helper.createInputImage(X, y, name="spiral_input.png")
 device = helper.determineDevice()
 
 class SpiralModel(nn.Module):
-    def __init__(self, input_features, output_features, hidden_units=8):
+    def __init__(self, input_features: int, output_features: int, hidden_units: int=8):
         super().__init__()
         self.linear_layer_stack = nn.Sequential(
             nn.Linear(in_features=input_features, out_features=hidden_units),
