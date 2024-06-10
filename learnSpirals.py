@@ -4,7 +4,7 @@ import numpy as np
 from typing import Final
 from sklearn.datasets import make_moons
 from sklearn.model_selection import train_test_split
-import helper_funcs as helper
+import github_upload_work.lesson2_work.helperFuncs as helper
 import matplotlib.pyplot as plt
 
 RAND_SEED: Final[int] = 50
