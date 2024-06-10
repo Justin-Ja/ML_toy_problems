@@ -4,6 +4,7 @@ from typing import Final
 from sklearn.datasets import make_moons
 from sklearn.model_selection import train_test_split
 import helperFuncs as helper
+from timeit import default_timer as timer
 
 # Hyperparameters, adjust these to effect the generated input and the effeciency of the model
 N_SAMPLES: Final[int] = 1000
@@ -11,7 +12,7 @@ NOISE: Final[int] = 0.08
 RAND_SEED: Final[int] = 42
 DEFAULT_HIDDEN_UNITS: Final[int] = 5
 LR: Final[float] = 0.1
-EPOCHS: Final[int] = 500
+EPOCHS: Final[int] = 750
 
 # Creating and adjusting data into suitable training/testing tensors
 points, groups = make_moons(N_SAMPLES, noise=NOISE, random_state=RAND_SEED)
@@ -55,7 +56,7 @@ optimizer = torch.optim.SGD(model_0.parameters(), LR)
 points_train, groups_train = points_train.to(device), groups_train.to(device)
 points_test, groups_test = points_test.to(device), groups_test.to(device)
 torch.manual_seed(RAND_SEED)
-
+startTime = timer()
 
 for epoch in range(EPOCHS + 1): #There's a plus one to get the final epoch stats printed out later
     ### TRAINING
@@ -86,5 +87,8 @@ for epoch in range(EPOCHS + 1): #There's a plus one to get the final epoch stats
         # Print out current status of the model
         print(f"Epoch: {epoch} | Accuracy: {accuracy: 0.2f}% | Loss: {test_loss: 0.5f} | - | Test Accuracy: {test_accuracy: 0.2f}% | Test Loss: {test_loss: 0.5f}")
 
+endTime = timer()
+helper.printTrainTime(startTime, endTime, device)
 helper.createOutputImage(model_0, points_train, groups_train, points_test, groups_test, name="moon_output.png")
+print("Created input and output images of the data successfully!")
 

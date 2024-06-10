@@ -65,5 +65,10 @@ def determineDevice():
     else:
         return "cpu"
     
+def printTrainTime(start: float, end: float, device: torch.device = None):
+    total_time = end - start
+    print(f"Train time on {device}: {total_time:.3f} seconds")
+    return total_time
+
 if __name__ == "__main__":
     print("Run one of the learn python files to see the ML models in action")
