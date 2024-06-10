@@ -90,5 +90,4 @@ for epoch in range(EPOCHS + 1): #There's a plus one to get the final epoch stats
 endTime = timer()
 helper.printTrainTime(startTime, endTime, device)
 helper.createOutputImage(model_0, points_train, groups_train, points_test, groups_test, name="moon_output.png")
-print("Created input and output images of the data successfully!")
-
+print("Created input and output images of the moon data successfully!")

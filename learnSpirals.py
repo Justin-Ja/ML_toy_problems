@@ -4,9 +4,10 @@ import numpy as np
 from typing import Final
 from sklearn.model_selection import train_test_split
 import helperFuncs as helper
+from timeit import default_timer as timer
 
 RAND_SEED: Final[int] = 50
-LR: Final[float] = 0.01  #If using 0.1, turn epochs down to ~10,000 otherwise accuracy starts decreasing / loss increases
+LR: Final[float] = 0.01  #If using 0.1, turn epochs down to ~10,000 otherwise accuracy starts decreasing / loss increases (overfitting?)
 EPOCHS: Final[int] = 25000
 
 #Code to generate sprials from here: https://cs231n.github.io/neural-networks-case-study/
@@ -63,6 +64,7 @@ y_train = y_train.to(torch.long)
 y_test = y_test.to(torch.long)
 
 torch.manual_seed(RAND_SEED)
+start = timer()
 
 for epoch in range(EPOCHS + 1):
     ### TRAINING
@@ -91,4 +93,7 @@ for epoch in range(EPOCHS + 1):
         # Print out current status of the model
         print(f"Epoch: {epoch} | Accuracy: {accuracy: 0.2f}% | Loss: {test_loss: 0.5f} | - | Test Accuracy: {test_accuracy: 0.2f}% | Test Loss: {test_loss: 0.5f}")
 
+end = timer()
+helper.printTrainTime(start, end, device)
 helper.createOutputImage(spiral_model_0, x_train, y_train, x_test, y_test, name="spiral_output.png" )
+print("Created input and output images of the spiral data successfully!")
