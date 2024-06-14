@@ -23,9 +23,11 @@ At some point, I will implement a way of user input to update these values witho
 ## Example Input/Output Images
 
 Moon dataset, input set and the output when the model was trained and tested:
-![moon_input](https://github.com/Justin-Ja/ML_toy_problems/assets/95664856/efe40259-f4fd-4976-8749-16fcf7121b2d)
 
-![moon_output](https://github.com/Justin-Ja/ML_toy_problems/assets/95664856/92e8fa43-734a-4efd-8f66-066bd2c2cefe)
+![updated_moon_input](https://github.com/Justin-Ja/ML_toy_problems/assets/95664856/a88e978e-b5a3-4456-8ea6-34c371d6cd99)
+
+![updated_moon_output](https://github.com/Justin-Ja/ML_toy_problems/assets/95664856/45ff74b3-2532-42b1-a037-7b371806770d)
+
 
 A spiral dataset:
 
