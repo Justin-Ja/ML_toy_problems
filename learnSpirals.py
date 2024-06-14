@@ -7,6 +7,7 @@ import helperFuncs as helper
 from timeit import default_timer as timer
 
 RAND_SEED: Final[int] = 50
+HIDDEN_UNITS: Final[int] = 32
 LR: Final[float] = 0.01  #If using 0.1, turn epochs down to ~10,000 otherwise accuracy starts decreasing / loss increases (overfitting?)
 EPOCHS: Final[int] = 25000
 
@@ -50,7 +51,7 @@ class SpiralModel(nn.Module):
        return self.linear_layer_stack(x)
 
 #Input is x,y coords so 2, and output is number of classes, which is 6
-spiral_model_0 = SpiralModel(input_features = 2, output_features = 6, hidden_units=32).to(device)
+spiral_model_0 = SpiralModel(input_features = 2, output_features = 6, hidden_units=HIDDEN_UNITS).to(device)
 
 loss_fn = nn.CrossEntropyLoss()
 optimizer = torch.optim.SGD(spiral_model_0.parameters(), LR)

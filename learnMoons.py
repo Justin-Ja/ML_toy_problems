@@ -10,7 +10,7 @@ from timeit import default_timer as timer
 N_SAMPLES: Final[int] = 1000
 NOISE: Final[int] = 0.08
 RAND_SEED: Final[int] = 42
-DEFAULT_HIDDEN_UNITS: Final[int] = 5
+HIDDEN_UNITS: Final[int] = 10
 LR: Final[float] = 0.1
 EPOCHS: Final[int] = 750
 
@@ -29,7 +29,7 @@ helper.createInputImage(points, groups, name="moon_input.png")
 
 # Consider possibly move this to its own file, and jsut have a new file for each class of model?
 class MoonModel(nn.Module):
-    def __init__(self, input_features: int, output_features: int, hidden_units: int=DEFAULT_HIDDEN_UNITS):
+    def __init__(self, input_features: int, output_features: int, hidden_units: int = 5):
         super().__init__()
 
         # Model has three hidden layers, with default of 5 neurons (hidden_units)
@@ -46,7 +46,7 @@ class MoonModel(nn.Module):
     def forward(self, x):
         return self.linear_layer_stack(x)
     
-model_0 = MoonModel(input_features = 2, output_features = 1, hidden_units=10)
+model_0 = MoonModel(input_features = 2, output_features = 1, hidden_units = HIDDEN_UNITS)
 #Binary groups so we can use BCE for loss calculation
 loss_fn = nn.BCEWithLogitsLoss()
 optimizer = torch.optim.SGD(model_0.parameters(), LR) 
