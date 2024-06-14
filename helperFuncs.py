@@ -71,4 +71,5 @@ def printTrainTime(start: float, end: float, device: torch.device = None):
     return total_time
 
 if __name__ == "__main__":
-    print("Run one of the learn python files to see the ML models in action")
+    print("This helper file does not run nor contain any models to train and run")
+    print("Run one of the learnX.py files to see the ML models in action")
