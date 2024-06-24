@@ -1,7 +1,5 @@
 # ML Toy Problems
 
-- - - -
-
 ## Description
 
 This repo contains some machine learning (ML) models that are trained to solve some [toy problems](https://medium.com/@vishu54784/what-are-some-good-toy-problems-that-can-be-done-over-a-weekend-by-a-single-coder-in-data-science-6674c88fecff)
@@ -74,15 +72,23 @@ options:
 
 ## Example Input/Output Images
 
-Moon dataset, input set and the output when the model was trained and tested:
+### LearnMoons.py
+
+Moon input set and the output after the model was trained and tested:
 
 ![updated_moon_input](https://github.com/Justin-Ja/ML_toy_problems/assets/95664856/a88e978e-b5a3-4456-8ea6-34c371d6cd99 "Moons input: An XY plot with two groups of points, yellow and black, both forming the shape of cresent moons")
 
+- - - -
+
 ![updated_moon_output](https://github.com/Justin-Ja/ML_toy_problems/assets/95664856/45ff74b3-2532-42b1-a037-7b371806770d "Moons output: The same plot as the input, but with a line created by the program to separate both groups of points")
 
-A spiral dataset:
+### A Spiral Dataset
+
+A spiral input set and the output when the model was finished being trained and tested:
 
 ![spiral_input](https://github.com/Justin-Ja/ML_toy_problems/assets/95664856/c838fdd0-fac7-47d7-8c2d-14d4d69b54aa "Spiral input: An XY plot of six groups of points forming a spiral")
+
+- - - -
 
 ![spiral_output](https://github.com/Justin-Ja/ML_toy_problems/assets/95664856/3986c77c-9cae-4e6f-a97e-eddf321723eb "Spirals output: The same spiral as the input, except the groups are separated by lines")
 
