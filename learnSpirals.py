@@ -10,6 +10,7 @@ RAND_SEED: Final[int] = 50
 HIDDEN_UNITS: Final[int] = 32
 LR: Final[float] = 0.01  #If using 0.1, turn epochs down to ~10,000 otherwise accuracy starts decreasing / loss increases (overfitting?)
 EPOCHS: Final[int] = 25000
+THETA: Final[float] = 0.175
 
 #Code to generate sprials from here: https://cs231n.github.io/neural-networks-case-study/
 
@@ -21,7 +22,7 @@ y = np.zeros(N*K, dtype='uint8') # class labels
 for j in range(K):
   ix = range(N*j,N*(j+1))
   r = np.linspace(0.0,2,N) # radius
-  t = np.linspace(j*4,(j+1)*4,N) + np.random.randn(N)*0.175 # theta - how spread out the dots are from their "central line"
+  t = np.linspace(j*4,(j+1)*4,N) + np.random.randn(N)*THETA # theta - how spread out the dots are from their "central line"
   X[ix] = np.c_[r*np.sin(t), r*np.cos(t)]
   y[ix] = j
 
