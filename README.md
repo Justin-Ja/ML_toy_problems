@@ -82,7 +82,7 @@ Moon input set and the output after the model was trained and tested:
 
 ![updated_moon_output](https://github.com/Justin-Ja/ML_toy_problems/assets/95664856/45ff74b3-2532-42b1-a037-7b371806770d "Moons output: The same plot as the input, but with a line created by the program to separate both groups of points")
 
-### A Spiral Dataset
+### LearnSpirals.py
 
 A spiral input set and the output when the model was finished being trained and tested:
 
