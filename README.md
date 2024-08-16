@@ -10,7 +10,7 @@ Current models are trained to learn the moon dataset from sklearn and spirals fr
 
 To be able to run the files, you'll need python 3.8 or later to install [pytorch](https://pytorch.org/get-started/locally/) (Cuda or CPU, code is device agnostic), along with mathplotlib and sklearn installed for python.
 
-Any of the learnX.py files are the files that can be executed to run a model to solve a problem. You can run the models in the learnX.py files with python3:
+Any of the learnX.py files are the files that are used to run a model to solve a problem.  You can run said files with the command python3:
 
 ```text
 python3 learnMoons.py
@@ -19,6 +19,7 @@ python3 learnMoons.py
 ```text
 python3 learnSpirals.py
 ```
+The helper file will not run any model code and simply exit if ran directly.
 
 ### Passing in Command Line Arguments
 
