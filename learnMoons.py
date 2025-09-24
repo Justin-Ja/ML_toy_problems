@@ -45,7 +45,7 @@ device = helper.determineDevice()
 
 helper.createInputImage(points, groups, name="moon_input.png")
 
-# Consider possibly move this to its own file, and jsut have a new file for each class of model?
+# Consider possibly move this to its own file, and just have a new file for each class of model?
 class MoonModel(nn.Module):
     def __init__(self, input_features: int, output_features: int, hidden_units: int = 5):
         super().__init__()
